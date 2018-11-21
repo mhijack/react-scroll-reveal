@@ -7,12 +7,20 @@ const App = () => (
   <Fragment>
     <div style={{ height: '2000px' }} />
     <Reveal
-      render={reveal => (
-        <div className="App" display={{ opacity: reveal ? 1 : 0 }}>
-          scroll-to-review-in-action
+      render={({ reveal, style }) => (
+        <div className="App" style={style}>
+          rendered with: props
         </div>
       )}
     />
+
+    <Reveal>
+      {({ reveal, style }) => (
+        <div className="App" style={style}>
+          rendered with: children
+        </div>
+      )}
+    </Reveal>
   </Fragment>
 );
 
