@@ -7,7 +7,7 @@ const App = () => (
   <Fragment>
     <div style={{ height: '2000px' }} />
     <Reveal
-      render={({ reveal, style }) => (
+      render={({ reveal, getRef, style }) => (
         <div className="App" style={style}>
           rendered with: props
         </div>

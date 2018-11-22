@@ -16,6 +16,12 @@ class Reveal extends Component {
     }
   };
 
+  /**
+   *  Checks whether
+   *  @param {DOMElement} ref of DOM element
+   *  @return {void}
+   *  @memberof Reveal
+   */
   isScrolledIntoView = el => {
     const { element } = this;
     if (element) {
@@ -51,8 +57,8 @@ class Reveal extends Component {
           ref={node => (this.element = node)}
           style={{ opacity: this.state.reveal ? 1 : 0 }}
         >
-          {(this.props.children && this.props.children(props)) ||
-            (this.props.render && this.props.render(props))}
+          {(this.props.children && this.props.children(props, this.getRef)) ||
+            (this.props.render && this.props.render(props, this.getRef))}
         </div>
       </Fragment>
     );
